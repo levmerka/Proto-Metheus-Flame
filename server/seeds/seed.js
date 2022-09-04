@@ -11,6 +11,6 @@ db.once('open', async () => {
   const userSeeds = await User.insertMany(userData);
   const fileSeeds = await File.insertMany(fileData);
     
-  console.log('Db seeded.');
+  console.log('example files loaded.');
   process.exit(0);
 });
