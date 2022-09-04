@@ -3,26 +3,24 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type User {
     _id: ID!
-    name: String!
+    name: String
   }
 
   type File {
-    _id: ID
+    _id: ID!
     songname: String
     aristname: String
-    album name: String
+    albumname: String
     genre: String
     text: String
   }
 
   type Query {
-    songname: [File]
-    matchups(_id: String): [Matchup]
+    text: [File]
   }
 
   type Mutation {
-    createMatchup(: String!, tech2: String!): Matchup
-    createVote(_id: String!, techNum: Int!): Matchup
+    createFile(songname: String, artistname: String): File
   }
 `;
 
