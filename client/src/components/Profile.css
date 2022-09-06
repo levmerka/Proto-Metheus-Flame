@@ -1,0 +1,42 @@
+.side-nav{
+    color: #f96816;
+    background-image: url(https://image.ibb.co/cO9Lxq/login-bg.jpg);
+  }
+  
+  
+  .trigger {
+    padding: 0 24px;
+    font-size: 18px;
+    line-height: 64px;
+    cursor: pointer;
+    transition: color 0.3s;
+    
+  }
+  
+  .trigger:hover {
+    color: #f96816;
+  }
+  
+  .logo {
+    height: 50px;
+    margin: 16px;
+    background: url("https://d28htnjz2elwuj.cloudfront.net/wp-content/uploads/2016/06/28120545/Prometheus_Featured.jpg");
+    background-size: 150px 50px;
+    margin: 20px;
+    padding: 0%;
+    background-repeat: no-repeat;
+    
+  
+  }
+  
+  .site-layout .site-layout-background {
+    background: #fff;
+    
+    
+  }
+  
+  .upload {
+    text-align: center;
+  }
+  
+  
