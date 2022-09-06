@@ -1,4 +1,6 @@
 const User = require('./User');
-const File = require('./File');
-
-module.exports = { User, File };
+const Track = require('./Track');
+const Artist = require('./Artist')
+const Album = require('./Album')
+const Genres = require('./Genres')
+module.exports = { User, Track, Artist, Album, Genres };

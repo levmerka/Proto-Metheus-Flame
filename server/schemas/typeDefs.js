@@ -5,30 +5,66 @@ const typeDefs = gql`
     _id: ID!
     username: String
     email: String
-    library: [File]
+    library: [Track]
   }
 
-  type File {
+  type Track {
     _id: ID!
     songname: String
     artistname: String
     albumname: String
-    genre: String
+    genre: [Genres]
     text: String
+  }
+
+  type Album {
+    _id: ID!
+    albumname: String!
+  }
+
+  type Artist {
+    _id: ID!
+    artistname: String!
+  }
+  type Genres {
+    _id: ID!
+    genre: String!
+  }
+  type GlobalSearch {
+    search: String!
   }
 
   type Query {
     username: [User]
-    songname: [File]
-    artistname: [File]
-    albumname: [File]
-    genre: [File]
-    text: [File]
+    songname: [Track]
+    artistname: [Track]
+    albumname: [Track]
+    genre: [Track]
+    text: [Track]
+  }
+  type Query {
+    track(id: ID!): Track
+    track(limit: Int = 20, artist: [ID!]): Track
+    album(id: ID!): Album
+    album(limit: Int = 20): Album
+    artist(limit: Int = 20): Artist!
+    artist(id: ID!): Artist
+    search(term: String = "", limit: Int = 50): GlobalSearch
   }
 
+  type Mutation {
+    createTrack(songname: String, artistname: String): Track
+  }
 
   type Mutation {
-    createFile(songname: String, artistname: String): File
+    createTrack(input: TrackInput!): Track
+  }
+
+  input TrackInput {
+    trackname: String!
+    genre: String
+    artist: String
+    album: String
   }
 `;
 

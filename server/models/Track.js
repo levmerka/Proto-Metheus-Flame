@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const fileSchema = new Schema({
+const trackSchema = new Schema({
   songname: {
     type: String,
     required: true,
@@ -24,6 +24,6 @@ const fileSchema = new Schema({
 
 });
 
-const File = model("File", fileSchema);
+const Track = model("Track", trackSchema);
 
-module.exports = File;
+module.exports = Track;
