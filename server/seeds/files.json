@@ -1,17 +1,37 @@
 [
-    {
-        "text": "Hello World!"
-    },
-    {
-        "text": "incredible new app"
-    },
-    {
-        "text": "any file you desire at your fingertip"
-    },
-    {
-        "text": "share your passions"
-    },
-    {
-        "text": "not a torrent site we swear :)"
-    }
+  {
+    "songname": "We Are The World",
+    "artistname": "Saviors of the New Earth",
+    "albumname": "We're Only In It For The Money [Compilation]",
+    "genre": "Pop",
+    "text": "Hello World!"
+  },
+  {
+    "songname": "655321",
+    "artistname": "DJDevastating",
+    "albumname": "Ambient Life",
+    "genre": "Electronic",
+    "text": "incredible new app"
+  },
+  {
+    "songname": "Fo Real",
+    "artistname": "MC Fo Real",
+    "albumname": "Yeah, Fo Real",
+    "genre": "Hip-Hop",
+    "text": "any file you desire at your fingertip"
+  },
+  {
+    "songname": "Legends Never Die",
+    "artistname": "Rocky Rox and the Real Rockers",
+    "albumname": "Greatest Hits",
+    "genre": "Rock",
+    "text": "share your passions"
+  },
+  {
+    "songname": "Back On My Porch Again",
+    "artistname": "Doug Jeremiah Hewitt",
+    "albumname": "Simple Folks, Simple Dreams",
+    "genre": "Country",
+    "text": "not a torrent site we swear :)"
+  }
 ]
