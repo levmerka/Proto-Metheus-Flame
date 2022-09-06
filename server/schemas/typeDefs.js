@@ -24,8 +24,8 @@ const typeDefs = gql`
     albumname: [File]
     genre: [File]
     text: [File]
-    track(id: File!): File
   }
+
 
   type Mutation {
     createFile(songname: String, artistname: String): File
@@ -33,3 +33,7 @@ const typeDefs = gql`
 `;
 
 module.exports = typeDefs;
+
+// input Query {
+//   track(id: File!): File
+// }
