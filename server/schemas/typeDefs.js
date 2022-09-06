@@ -6,7 +6,6 @@ const typeDefs = gql`
     username: String
     email: String
     library: [File]
-    
   }
 
   type File {
@@ -25,6 +24,7 @@ const typeDefs = gql`
     albumname: [File]
     genre: [File]
     text: [File]
+    track(id: File!): File
   }
 
   type Mutation {
