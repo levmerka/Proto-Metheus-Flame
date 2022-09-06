@@ -29,7 +29,7 @@ export default function Welcome() {
             </form>
             <div class="links">
               <a href="#">Forgot Password</a>
-              <a href="#">Sign in with company or school</a>
+              <a href="#">Sign in with Google</a>
             </div>
             <div class="or">
               <hr class="bar" />
