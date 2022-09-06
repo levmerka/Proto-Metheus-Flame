@@ -30,6 +30,9 @@ const typeDefs = gql`
     _id: ID!
     genre: String!
   }
+  type GlobalSearch {
+    search: String!
+  }
 
   type Query {
     username: [User]
@@ -41,25 +44,13 @@ const typeDefs = gql`
   }
   type Query {
     track(id: ID!): Track
-    tracks(
-        limit: Int = 20
-        genre: [Genres],
-        artists: [ID!]
-    ): [Track]
+    track(limit: Int = 20, artist: [ID!]): Track
     album(id: ID!): Album
-    albums(limit: Int = 20): [Album]
-    artists(
-        limit: Int = 20,
-    ): [Artist!]
+    album(limit: Int = 20): Album
+    artist(limit: Int = 20): Artist!
     artist(id: ID!): Artist
-    search(
-        term: String = ""
-        genre: [Genres]
-        limit: Int = 50
-    ): [GlobalSearch]
-}
-  
-
+    search(term: String = "", limit: Int = 50): GlobalSearch
+  }
 
   type Mutation {
     createTrack(songname: String, artistname: String): Track
@@ -67,14 +58,14 @@ const typeDefs = gql`
 
   type Mutation {
     createTrack(input: TrackInput!): Track
-}
+  }
 
-input TrackInput {
-    name: String!
-    genre: [Genres]!
-    artist: [ID!]
-    album: ID
-}
+  input TrackInput {
+    trackname: String!
+    genre: String
+    artist: String
+    album: String
+  }
 `;
 
 module.exports = typeDefs;
