@@ -6,6 +6,7 @@ import './Mystyle.css';
 
 
 
+
 export default function Welcome() {
     // All functional components must have a return method that contains JSX.
     // We return all the JSX inside a parent element with a className of "container".
@@ -41,17 +42,9 @@ export default function Welcome() {
           </div>
 
           <div className='Android'>
-          <MdTabletAndroid /> 
+          <MdTabletAndroid /> <MdDesktopWindows /> <AiOutlineApple /> 
           </div>
-          <div className='Windows'>
-           <MdDesktopWindows />
-          </div>
-          <div className='Apple'>
-           <AiOutlineApple />
-          </div>
-          <div className='Linux'>
-           <AiOutlineApple />
-          </div>               
+                 
           
          
           
