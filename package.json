@@ -6,6 +6,7 @@
   "main": "server/server.js",
   "scripts": {
     "start": "node server/server.js --ignore client",
+    "hotstart": "nodemon server/server.js --ignore client",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
