@@ -1,21 +1,21 @@
-const { User, File } = require("../models");
+const { User, Track } = require("../models");
 
 const resolvers = {
   Query: {
     songname: async () => {
-      return File.find({});
+      return Track.find({});
     },
     // username: async () => {
     //   return User.find({}).populate('library');
     // },
     artistname: async () => {
-      return File.find({});
+      return Track.find({});
     },
     albumname: async () => {
-      return File.find({});
+      return Track.find({});
     },
     genre: async () => {
-      return File.find({});
+      return Track.find({});
     },
     // matchups: async (parent, { _id }) => {
     //   const params = _id ? { _id } : {};
