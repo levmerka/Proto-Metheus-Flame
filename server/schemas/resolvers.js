@@ -1,8 +1,20 @@
-const { User, File } = require('../models');
+const { User, File } = require("../models");
 
 const resolvers = {
   Query: {
-    text: async () => {
+    songname: async () => {
+      return File.find({});
+    },
+    // username: async () => {
+    //   return User.find({}).populate('library');
+    // },
+    artistname: async () => {
+      return File.find({});
+    },
+    albumname: async () => {
+      return File.find({});
+    },
+    genre: async () => {
       return File.find({});
     },
     // matchups: async (parent, { _id }) => {
@@ -15,8 +27,7 @@ const resolvers = {
   //     const matchup = await User.create(args);
   //     return matchup;
   //   },
-   
-    
+
   // },
 };
 
