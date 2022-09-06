@@ -17,7 +17,13 @@ const userSchema = new Schema({
         required: true,
         minlength: 8,
     },
+    library: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Track'
+    }],
 }); 
+
+
 
 userSchema.pre('save', async function (next) {
     if (this.isNew || this.isModified('password')) {

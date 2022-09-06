@@ -1,4 +1,4 @@
-const { User, Track } = require("../models");
+const { User, Track, GlobalSearch, Artist, Album, Genres } = require("../models");
 
 const resolvers = {
   Query: {
@@ -17,18 +17,22 @@ const resolvers = {
     genre: async () => {
       return Track.find({});
     },
-    // matchups: async (parent, { _id }) => {
-    //   const params = _id ? { _id } : {};
-    //   return User.find(params);
-    // },
-  },
-  // Mutation: {
-  //   createMatchup: async (parent, args) => {
-  //     const matchup = await User.create(args);
-  //     return matchup;
-  //   },
+//     globalsearch: async () => {
 
-  // },
+// }    
+
+  },
+
+  Mutation : {
+    addToLibrary: async (parent, args, context) => {
+      const addToLibrary = await User.findOneAndUpdate(
+        {_id: context.user._id},
+        {$addToSet: {library: args.id}},
+        {new:true},
+      );
+      return addToLibrary
+    }
+  }
 };
 
 module.exports = resolvers;

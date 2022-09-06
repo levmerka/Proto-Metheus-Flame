@@ -10,7 +10,7 @@ const typeDefs = gql`
 
   type Track {
     _id: ID!
-    songname: String
+    songname: String!
     artistname: String
     albumname: String
     genre: [Genres]
@@ -30,10 +30,11 @@ const typeDefs = gql`
     _id: ID!
     genre: String!
   }
+
   type GlobalSearch {
     search: String!
   }
-
+  # Search
   type Query {
     username: [User]
     songname: [Track]
@@ -41,25 +42,19 @@ const typeDefs = gql`
     albumname: [Track]
     genre: [Track]
     text: [Track]
-  }
-  type Query {
     track(id: ID!): Track
-    track(limit: Int = 20, artist: [ID!]): Track
     album(id: ID!): Album
-    album(limit: Int = 20): Album
-    artist(limit: Int = 20): Artist!
     artist(id: ID!): Artist
     search(term: String = "", limit: Int = 50): GlobalSearch
   }
 
-  type Mutation {
-    createTrack(songname: String, artistname: String): Track
-  }
-
+  # Add to Users' Library
   type Mutation {
     createTrack(input: TrackInput!): Track
+    addToLibrary(id: ID!): User
   }
 
+  # Upload
   input TrackInput {
     trackname: String!
     genre: String
