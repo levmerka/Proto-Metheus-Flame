@@ -15,12 +15,23 @@ import {
 import { Layout, Menu } from 'antd';
 import { Button, Radio } from 'antd';
 import { DownloadOutlined } from '@ant-design/icons';
-import { Input } from 'antd';
+import { Input, Space } from 'antd';
+import { AudioOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import './Profile.css'
 
 const { Header, Sider, Content } = Layout;
 const { Search } = Input;
+const onSearch = (value) => console.log(value);
+
+const suffix = (
+    <AudioOutlined
+      style={{
+        fontSize: 16,
+        color: '#1890ff',
+      }}
+    />
+  );
 
 const App = () => {
   const [size, setSize] = useState('large');
@@ -31,7 +42,7 @@ const App = () => {
       
       <Sider trigger={null} collapsible collapsed={collapsed} className="side-nav">
         
-        <div className="logo" /> 
+        <div className="logo1" /> 
         
         <Menu
           theme="dark"
@@ -88,10 +99,13 @@ const App = () => {
         </Header>
         <Content className="search-bar"
         >
-          <>
-   
-   <Search placeholder="input search text" enterButton="Search" size="large" loading />
- </>
+         <Search
+      placeholder="Whar are you looking for..."
+      enterButton="Search"
+      size="large"
+      suffix={suffix}
+      onSearch={onSearch}
+    />
           </Content>
         
         <Content
