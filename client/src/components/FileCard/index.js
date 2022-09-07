@@ -3,14 +3,14 @@ import { Card } from 'antd';
 import { Button } from 'antd';
 
 
-const [addFile, { error }] = useMutation(ADD_File, {
+const [addToLibrary, { error }] = useMutation(ADD_File, {
     update(cache, { data: { addFile } }) {
       try {
         const { File } = cache.readQuery({ query: QUERY_File });
 
         cache.writeQuery({
           query: QUERY_File,
-          data: { File: [addFile, ...File] },
+          data: { File: [addToLibrary, ...File] },
         });
       } catch (e) {
         console.error(e);

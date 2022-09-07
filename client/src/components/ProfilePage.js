@@ -19,7 +19,7 @@ import { Input, Space } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import './Profile.css'
-import FileCard from '../components/FileCard';
+
 
 const { Header, Sider, Content } = Layout;
 const { Search } = Input;
@@ -119,7 +119,7 @@ const App = () => {
           
           
         >
-          <FileCard/>      
+               
         </Content>
       </Layout>
     </Layout>

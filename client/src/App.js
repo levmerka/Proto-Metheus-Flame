@@ -4,7 +4,6 @@ import StyleSheet from './components/Stylesheet';
 import { DatePicker } from 'antd';
 import ProfilePage from './components/ProfilePage';
 import UploadPage from './components/UploadPage';
-import FileCard from './components/FileCard';
 import './App.css';
 import 'antd/dist/antd.min.css';
 
