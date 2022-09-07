@@ -20,6 +20,7 @@ import { AudioOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import './Profile.css'
 
+
 const { Header, Sider, Content } = Layout;
 const { Search } = Input;
 const onSearch = (value) => console.log(value);
@@ -77,7 +78,7 @@ const App = () => {
             {
               key: '6',
               icon: <TeamOutlined />,
-              label: 'Comunity',
+              label: 'Community',
             },
           ]}
         />
@@ -116,8 +117,9 @@ const App = () => {
             minHeight: 700,
           }}
           
+          
         >
-                   
+               
         </Content>
       </Layout>
     </Layout>
