@@ -1,16 +1,33 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-
+const jwt =  require('jsonwebtoken')
 const { typeDefs, resolvers } = require('./schemas');
 const db = require('./config/connection');
 
-const PORT = process.env.PORT || 3001;
+const { JWT_SECRET, PORT } = process.env || 3001;
 const app = express();
+const getUser = token => {
+  try {
+    if (token) {
+      return jwt.verify(token, JWT_SECRET)
+    }
+    return null
+  } catch (error) {
+    return null
+  }
+}
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-});
+  context: ({ req }) => {
+    const token = req.get('Authorization') || ''
+    return { user: getUser(token.replace('Bearer', ''))}
+  },
+  introspection: true,
+  playground: true
+})
+;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

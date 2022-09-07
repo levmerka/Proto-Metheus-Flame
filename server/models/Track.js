@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const Genres = require("./Genres");
 
 const trackSchema = new Schema({
   songname: {
@@ -14,7 +15,8 @@ const trackSchema = new Schema({
     required: false,
   },
   genre: {
-    type: String,
+    type: Schema.Types.ObjectId,
+    ref: 'Genres',
     required: false,
   },
   text: {
