@@ -19,6 +19,7 @@ import { Input, Space } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import './Profile.css'
+import FileCard from '../components/FileCard';
 
 const { Header, Sider, Content } = Layout;
 const { Search } = Input;
@@ -77,7 +78,7 @@ const App = () => {
             {
               key: '6',
               icon: <TeamOutlined />,
-              label: 'Comunity',
+              label: 'Community',
             },
           ]}
         />
@@ -116,8 +117,9 @@ const App = () => {
             minHeight: 700,
           }}
           
+          
         >
-                   
+          <FileCard/>      
         </Content>
       </Layout>
     </Layout>
