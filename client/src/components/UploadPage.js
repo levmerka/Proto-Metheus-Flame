@@ -1,6 +1,6 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import './index.css';
+
 import { InboxOutlined } from '@ant-design/icons';
 import { message, Upload } from 'antd';
 
