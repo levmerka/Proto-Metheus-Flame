@@ -7,6 +7,10 @@ const typeDefs = gql`
     email: String
     library: [Track]
   }
+  type AuthPayload {
+    token: String!
+    user: [User!]!
+  }
 
   type Track {
     _id: ID!
@@ -36,6 +40,8 @@ const typeDefs = gql`
   }
   # Search
   type Query {
+    user: [ID]
+    me: [User]
     username: [User]
     songname: [Track]
     artistname: [Track]
@@ -48,8 +54,10 @@ const typeDefs = gql`
     search(term: String = "", limit: Int = 50): GlobalSearch
   }
 
-  # Add to Users' Library
+  # Add to Users' Library, login signup
   type Mutation {
+    registerUser(username: String, email: String!, password: String!): AuthPayload!
+    login (email: String!, password: String!): AuthPayload!
     createTrack(input: TrackInput!): Track
     addToLibrary(id: ID!): User
   }
