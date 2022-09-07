@@ -18,7 +18,8 @@ import { DownloadOutlined } from '@ant-design/icons';
 import { Input, Space } from 'antd';
 import { AudioOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
-import './Profile.css'
+import './Profile.css';
+import FileCard from './FileCard';
 
 
 const { Header, Sider, Content } = Layout;
@@ -119,10 +120,12 @@ const App = () => {
           
           
         >
-               
+          <FileCard/>
         </Content>
+       
       </Layout>
     </Layout>
+    
   );
 };
 
