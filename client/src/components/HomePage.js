@@ -7,37 +7,40 @@ import './Mystyle.css';
 
 
 
-export default function Welcome() {
+export default function Welcome({setLoggedIn}) {
     // All functional components must have a return method that contains JSX.
     // We return all the JSX inside a parent element with a className of "container".
+    function login (){
+      setLoggedIn(true)
+    }
     return (
         <div id="wrapper">
         <div id="left">
           <div id="signin">
-            <div class="logo">
+            <div className="logo">
               <img src="https://d28htnjz2elwuj.cloudfront.net/wp-content/uploads/2016/06/28120545/Prometheus_Featured.jpg" />
             </div>
             <form>
               <div>
                 <label>Email or Username</label>
-                <input type="text" class="text-input" />
+                <input type="text" className="text-input" />
               </div>
               <div>
                 <label>Password</label>
-                <input type="password" class="text-input" />
+                <input type="password" className="text-input" />
               </div>
-              <button type="submit" class="primary-btn">Sign In</button>
+              <button onClick={login} className="primary-btn">Sign In</button>
             </form>
-            <div class="links">
+            <div className="links">
               <a href="#">Forgot Password</a>
               <a href="#">Sign in with Google</a>
             </div>
-            <div class="or">
-              <hr class="bar" />
+            <div className="or">
+              <hr className="bar" />
               <span>OR</span>
-              <hr class="bar" />
+              <hr className="bar" />
             </div>
-            <a href="#" class="secondary-btn">Create an account</a>
+            <a href="#" className="secondary-btn">Create an account</a>
            
           </div>
 
@@ -57,11 +60,11 @@ export default function Welcome() {
         </div>
         <div id="right">
           <div id="showcase">
-            <div class="showcase-content">
-              <h1 class="showcase-text">
+            <div className="showcase-content">
+              <h1 className="showcase-text">
                 Let's share files <strong>together</strong>
               </h1>
-              <a href="#" class="secondary-btn">Start a FREE 10-day trial</a>
+              <a href="#" className="secondary-btn">Start a FREE 10-day trial</a>
             </div>
           </div>
         </div>
