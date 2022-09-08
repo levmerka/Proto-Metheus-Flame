@@ -11,6 +11,7 @@ import {
   CustomerServiceOutlined,
   FolderOpenOutlined,
   TeamOutlined,
+
 } from "@ant-design/icons";
 import { Layout, Menu } from "antd";
 import { Button, Radio } from "antd";
@@ -19,6 +20,20 @@ import { Input, Space } from "antd";
 import { AudioOutlined } from "@ant-design/icons";
 import "antd/dist/antd.css";
 import "./Profile.css";
+
+  
+  
+} from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
+import { Button, Radio } from 'antd';
+import { DownloadOutlined } from '@ant-design/icons';
+import { Input, Space } from 'antd';
+import { AudioOutlined } from '@ant-design/icons';
+import 'antd/dist/antd.css';
+import './Profile.css';
+import FileCard from './FileCard';
+
+
 
 const { Header, Sider, Content } = Layout;
 const { Search } = Input;
@@ -118,6 +133,7 @@ const App = () => {
             minHeight: 700,
           }}
         >
+
           <ErrorBoundary>
             <Router>
               <Routes>
@@ -125,9 +141,14 @@ const App = () => {
               </Routes>
             </Router>
           </ErrorBoundary>
+
+          <FileCard/>
+
         </Content>
+       
       </Layout>
     </Layout>
+    
   );
 };
 
