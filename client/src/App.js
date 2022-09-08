@@ -10,7 +10,7 @@ import 'antd/dist/antd.min.css';
 function App() {
   return (
     <div className="App">      
-      <ProfilePage/>
+      <HomePage/>
     </div>
   );
 }

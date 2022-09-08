@@ -20,7 +20,7 @@ import { AudioOutlined } from '@ant-design/icons';
 import 'antd/dist/antd.css';
 import './Profile.css'
 
-const { Header, Sider, Content } = Layout;
+const { Header, Sider, Content, Footer, Breadcrumb } = Layout;
 const { Search } = Input;
 const onSearch = (value) => console.log(value);
 
@@ -39,6 +39,8 @@ const App = () => {
   return (
     
     <Layout className>
+
+      
       
       <Sider trigger={null} collapsible collapsed={collapsed} className="side-nav">
         
@@ -94,9 +96,12 @@ const App = () => {
           {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
             className: 'trigger',
             onClick: () => setCollapsed(!collapsed),
-          })}
-          
+          })};
+
+                    
         </Header>
+                 
+                
         <Content className="search-bar"
         >
          <Search
@@ -119,6 +124,14 @@ const App = () => {
         >
                    
         </Content>
+        <Footer
+      style={{
+        textAlign: 'center',
+      }}
+    >
+      Prometheus ©2022 Created by Potential Group
+      
+    </Footer>
       </Layout>
     </Layout>
   );
