@@ -1,14 +1,26 @@
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import HomePage from "./HomePage";
+import ErrorBoundary from "./ErrorBoundary";
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UploadOutlined,
   UserOutlined,
   ProfileOutlined,
-  CustomerServiceOutlined, 
+  CustomerServiceOutlined,
   FolderOpenOutlined,
   TeamOutlined,
+
+} from "@ant-design/icons";
+import { Layout, Menu } from "antd";
+import { Button, Radio } from "antd";
+import { DownloadOutlined } from "@ant-design/icons";
+import { Input, Space } from "antd";
+import { AudioOutlined } from "@ant-design/icons";
+import "antd/dist/antd.css";
+import "./Profile.css";
+
   
   
 } from '@ant-design/icons';
@@ -22,105 +34,116 @@ import './Profile.css';
 import FileCard from './FileCard';
 
 
+
 const { Header, Sider, Content } = Layout;
 const { Search } = Input;
 const onSearch = (value) => console.log(value);
 
 const suffix = (
-    <AudioOutlined
-      style={{
-        fontSize: 16,
-        color: '#1890ff',
-      }}
-    />
-  );
+  <AudioOutlined
+    style={{
+      fontSize: 16,
+      color: "#1890ff",
+    }}
+  />
+);
 
 const App = () => {
-  const [size, setSize] = useState('large');
+  const [size, setSize] = useState("large");
   const [collapsed, setCollapsed] = useState(false);
   return (
-    
     <Layout className>
-      
-      <Sider trigger={null} collapsible collapsed={collapsed} className="side-nav">
-        
-        <div className="logo1" /> 
-        
+      <Sider
+        trigger={null}
+        collapsible
+        collapsed={collapsed}
+        className="side-nav"
+      >
+        <div className="logo1" />
+
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['1']}
+          defaultSelectedKeys={["1"]}
           items={[
             {
-              key: '1',
+              key: "1",
               icon: <UserOutlined />,
-              label: 'Profile',
+              label: "Profile",
             },
             {
-              key: '2',
+              key: "2",
               icon: <ProfileOutlined />,
-              label: 'Library',
+              label: "Library",
             },
             {
-              key: '3',
+              key: "3",
               icon: <CustomerServiceOutlined />,
-              label: 'Creators on Prometheus',
+              label: "Creators on Prometheus",
             },
             {
-              key: '4',
+              key: "4",
               icon: <FolderOpenOutlined />,
-              label: 'All Files',
+              label: "All Files",
             },
             {
-              key: '5',
+              key: "5",
               icon: <UploadOutlined />,
-              label: 'Upload',
+              label: "Upload",
             },
             {
-              key: '6',
+              key: "6",
               icon: <TeamOutlined />,
-              label: 'Community',
+              label: "Community",
             },
           ]}
         />
       </Sider>
-   
-      <Layout className="site-layout"> 
-      
+
+      <Layout className="site-layout">
         <Header
           className="site-layout-background"
           style={{
             padding: 0,
           }}
         >
-          {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-            className: 'trigger',
-            onClick: () => setCollapsed(!collapsed),
-          })}
-          
+          {React.createElement(
+            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+            {
+              className: "trigger",
+              onClick: () => setCollapsed(!collapsed),
+            }
+          )}
         </Header>
-        <Content className="search-bar"
-        >
-         <Search
-      placeholder="Whar are you looking for..."
-      enterButton="Search"
-      size="large"
-      suffix={suffix}
-      onSearch={onSearch}
-    />
-          </Content>
-        
+        <Content className="search-bar">
+          <Search
+            placeholder="Whar are you looking for..."
+            enterButton="Search"
+            size="large"
+            suffix={suffix}
+            onSearch={onSearch}
+          />
+        </Content>
+
         <Content
           className="site-layout-background"
           style={{
-            margin: '24px 16px',
+            margin: "24px 16px",
             padding: 24,
             minHeight: 700,
           }}
-          
-          
         >
+
+          <ErrorBoundary>
+            <Router>
+              <Routes>
+                <Route path="/home" element={<HomePage />}></Route>
+              </Routes>
+            </Router>
+          </ErrorBoundary>
+
           <FileCard/>
+
         </Content>
        
       </Layout>
